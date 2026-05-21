@@ -33,7 +33,7 @@ const Hero = () => {
         zIndex: -1
       }}></div>
 
-      <div className="container animate-fade-in" style={{
+      <div className="container animate-fade-in hero-grid" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: '4rem',
@@ -53,7 +53,7 @@ const Hero = () => {
           }}>
             👋 Welcome to my portfolio
           </div>
-          <h1 style={{
+          <h1 className="hero-title" style={{
             fontSize: '4.5rem',
             marginBottom: '1.5rem',
             letterSpacing: '-1px'
@@ -65,7 +65,7 @@ const Hero = () => {
               WebkitTextFillColor: 'transparent'
             }}>Developer</span>
           </h1>
-          <p style={{
+          <p className="hero-desc" style={{
             fontSize: '1.25rem',
             color: 'var(--text-secondary)',
             marginBottom: '2.5rem',
@@ -74,7 +74,7 @@ const Hero = () => {
             I build exceptional and accessible digital experiences for the web. Turning complex problems into beautiful, intuitive designs.
           </p>
           
-          <div style={{ display: 'flex', gap: '1rem' }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '1rem' }}>
             <a href="#projects" className="btn btn-primary">
               View My Work <FaArrowRight />
             </a>
@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div style={{ position: 'relative' }}>
+        <div className="hero-image-wrapper" style={{ position: 'relative' }}>
           <div className="glass" style={{
             width: '100%',
             aspectRatio: '1/1',

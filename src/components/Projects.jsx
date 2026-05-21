@@ -43,7 +43,7 @@ const Projects = () => {
               alignItems: 'center'
             }}>
               {/* Project Image */}
-              <div style={{
+              <div className="project-img-wrapper" style={{
                 order: index % 2 === 0 ? 1 : 2,
                 position: 'relative',
                 borderRadius: '16px',
@@ -73,7 +73,7 @@ const Projects = () => {
               </div>
               
               {/* Project Info */}
-              <div style={{
+              <div className="project-info-wrapper" style={{
                 order: index % 2 === 0 ? 2 : 1,
                 textAlign: index % 2 === 0 ? 'left' : 'right',
                 zIndex: 2
@@ -81,7 +81,7 @@ const Projects = () => {
                 <p style={{ color: 'var(--accent)', fontWeight: '600', marginBottom: '0.5rem' }}>Featured Project</p>
                 <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>{project.title}</h3>
                 
-                <div className="glass" style={{
+                <div className="glass project-desc-glass" style={{
                   padding: '1.5rem',
                   marginBottom: '1.5rem',
                   marginLeft: index % 2 === 0 ? '-4rem' : '0',
@@ -93,7 +93,7 @@ const Projects = () => {
                   <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>{project.description}</p>
                 </div>
                 
-                <ul style={{
+                <ul className="project-tags" style={{
                   display: 'flex',
                   gap: '1rem',
                   flexWrap: 'wrap',
@@ -108,7 +108,7 @@ const Projects = () => {
                   ))}
                 </ul>
                 
-                <div style={{
+                <div className="project-links" style={{
                   display: 'flex',
                   gap: '1.5rem',
                   justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end'

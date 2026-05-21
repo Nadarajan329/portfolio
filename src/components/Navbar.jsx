@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,20 +40,51 @@ const Navbar = () => {
           Portfolio<span style={{ color: 'var(--accent)' }}>.</span>
         </a>
         
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+        {/* Mobile Toggle Button */}
+        <button 
+          className="nav-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            display: 'none', // Block on mobile via index.css
+            background: 'none',
+            border: 'none',
+            color: 'var(--text-primary)',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            zIndex: 1000
+          }}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        
+        <div 
+          className={`nav-menu ${isOpen ? 'active' : ''}`}
+          style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}
+        >
           <ul style={{
             display: 'flex',
             gap: '2rem',
             margin: 0,
-            padding: 0
+            padding: 0,
+            flexDirection: 'inherit'
           }}>
-            <li><a href="#about" style={navLinkStyle}>About</a></li>
-            <li><a href="#skills" style={navLinkStyle}>Skills</a></li>
-            <li><a href="#projects" style={navLinkStyle}>Projects</a></li>
-            <li><a href="#contact" style={navLinkStyle}>Contact</a></li>
+            <li><a href="#about" onClick={() => setIsOpen(false)} style={navLinkStyle}>About</a></li>
+            <li><a href="#skills" onClick={() => setIsOpen(false)} style={navLinkStyle}>Skills</a></li>
+            <li><a href="#projects" onClick={() => setIsOpen(false)} style={navLinkStyle}>Projects</a></li>
+            <li><a href="#contact" onClick={() => setIsOpen(false)} style={navLinkStyle}>Contact</a></li>
           </ul>
           
-          <div style={{ display: 'flex', gap: '1rem', marginLeft: '1rem', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+          <div 
+            className="nav-socials"
+            style={{ 
+              display: 'flex', 
+              gap: '1rem', 
+              marginLeft: '1rem', 
+              paddingLeft: '1rem', 
+              borderLeft: '1px solid rgba(255,255,255,0.1)' 
+            }}
+          >
             <a href="https://github.com" target="_blank" rel="noreferrer" style={iconStyle}><FaGithub /></a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={iconStyle}><FaLinkedin /></a>
           </div>

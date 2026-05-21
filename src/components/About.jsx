@@ -8,7 +8,7 @@ const About = () => {
       <div className="container">
         <h2 className="section-title">About Me</h2>
         
-        <div style={{
+        <div className="about-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1.5fr',
           gap: '4rem',
@@ -75,7 +75,7 @@ const About = () => {
               When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community.
             </p>
             
-            <div style={{
+            <div className="about-info-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
               gap: '1.5rem'
